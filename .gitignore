@@ -10,5 +10,5 @@
 ###< symfony/framework-bundle ###
 /Command Prompt.lnk
 /.settings/**
-/.builbpath
+/.buildbpath
 /.project

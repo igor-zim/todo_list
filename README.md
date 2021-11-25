@@ -1,4 +1,9 @@
 #Установка
+
+В файле .env настроить параметры соединения с базой данных.
+
+В консоли выполнить:
+
 ```
 composer install
 php bin/console doctrine:database:create

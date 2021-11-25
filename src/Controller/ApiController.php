@@ -42,7 +42,7 @@ class ApiController extends AbstractController
 			if ($l > 1000)
 			{
 				$res['STATUS'] = 'ERROR';
-				$res['ERROR_MESSAGE'] = 'String is too long';
+				$res['ERROR_MESSAGE'] = 'Text is too long';
 				return new JsonResponse($res, 400);
 			}
 			$t = time();
@@ -72,7 +72,7 @@ class ApiController extends AbstractController
 			if (!$task)
 			{
 				$res['STATUS'] = 'ERROR';
-				$res['ERROR_MESSAGE'] = 'Task ID '.$data.' not found';;
+				$res['ERROR_MESSAGE'] = 'Task ID '.$data.' not found';
 				return new JsonResponse($res, 404);
 			}
 			if ($delete !== false)

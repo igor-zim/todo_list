@@ -18,7 +18,7 @@ class ApiController extends AbstractController
 	public function handleRequest(Request $request, TodoRepository $rep, EntityManagerInterface $manager): Response
 	{
 		$res = [];
-		//Ïîëó÷èòü ñïèñîê âûïîëíåííûõ èëè íåâûïîëíåííûõ çàäà÷
+		//ĞŸĞ¾Ğ»ÑƒÑ‡Ğ¸Ñ‚ÑŒ ÑĞ¿Ğ¸ÑĞ¾Ğº Ğ²Ñ‹Ğ¿Ğ¾Ğ»Ğ½ĞµĞ½Ğ½Ñ‹Ñ… Ğ¸Ğ»Ğ¸ Ğ½ĞµĞ²Ñ‹Ğ¿Ğ¾Ğ»Ğ½ĞµĞ½Ğ½Ñ‹Ñ… Ğ·Ğ°Ğ´Ğ°Ñ‡
 		$undone = $request->get('task_get_undone', false);
 		$done = $request->get('task_get_done', false);
 		$data = ($done !== false) ? $done : $undone;
@@ -34,7 +34,7 @@ class ApiController extends AbstractController
 				$res['DATA'][] = ['id' => $v->getId(), 't' => $v->getT(), 'text' => $v->getBody()];
 			}
 		}
-		//Äîáàâèòü çàäà÷ó
+		//Ğ”Ğ¾Ğ±Ğ°Ğ²Ğ¸Ñ‚ÑŒ Ğ·Ğ°Ğ´Ğ°Ñ‡Ñƒ
 		$data = $request->get('task_add', false);
 		if ($data !== false)
 		{
@@ -55,7 +55,7 @@ class ApiController extends AbstractController
 			$res['STATUS'] = 'OK';
 			$res['DATA'][] = ['id' => $task->getId(), 't' => $task->getT(), 'text' => $task->getBody()];
 		}
-		//Ïîìåòèòü çàäà÷ó êàê âûïîëíåííóş, èëè êàê íåâûïîëíåííóş, èëè óäàëèòü çàäà÷ó
+		//ĞŸĞ¾Ğ¼ĞµÑ‚Ğ¸Ñ‚ÑŒ Ğ·Ğ°Ğ´Ğ°Ñ‡Ñƒ ĞºĞ°Ğº Ğ²Ñ‹Ğ¿Ğ¾Ğ»Ğ½ĞµĞ½Ğ½ÑƒÑ, Ğ¸Ğ»Ğ¸ ĞºĞ°Ğº Ğ½ĞµĞ²Ñ‹Ğ¿Ğ¾Ğ»Ğ½ĞµĞ½Ğ½ÑƒÑ, Ğ¸Ğ»Ğ¸ ÑƒĞ´Ğ°Ğ»Ğ¸Ñ‚ÑŒ Ğ·Ğ°Ğ´Ğ°Ñ‡Ñƒ
 		$done = $request->get('task_set_done', false);
 		$undone = $request->get('task_set_undone', false);
 		$delete = $request->get('task_delete', false);

@@ -9,6 +9,7 @@
 /vendor/
 ###< symfony/framework-bundle ###
 /Command Prompt.lnk
+/.settings
 /.settings/**
-/.buildbpath
 /.project
+/.buildpath
